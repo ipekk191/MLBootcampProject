@@ -72,8 +72,7 @@ Worms               0.36%
 ```
 
 ## 🛠️ Kullanılan Teknolojiler 
-**Makine Öğrenmesi Algoritmaları
-:**
+**Makine Öğrenmesi Algoritmaları:**
 - Random Forest (Ana model)
 
 - Decision Tree
@@ -84,8 +83,7 @@ Worms               0.36%
 
 - KNN
 
-**Ön İşleme Teknikleri
-:**
+**Ön İşleme Teknikleri:**
 - Label Encoding
 
 - StandardScaler
@@ -94,8 +92,7 @@ Worms               0.36%
 
 - PCA (Boyut indirgeme)
 
-**Değerlendirme Metrikleri
-:**
+**Değerlendirme Metrikleri:**
 - Accuracy
 
 - Precision/Recall
@@ -119,7 +116,7 @@ Siber güvenlik uygulamalarında **yorumlanabilirlik** ve **kararlılık** mutla
 | **Nadir Sınıflar**   | Worms: %98.2 Recall   | Worms: %97.5 Recall  | Nadir saldırı tespiti |
 | **Hiperparametre**   | 3 ana parametre       | 12+ parametre        | Bakım kolaylığı       |
 
-**Teknik Gerekçelerim**:
+**Teknik Gerekçelerim:**
 1. **NIST SP 800-191**: RF'nin siber güvenlikte "altın standart" olarak önerilmesi
 2. **Model Stabilitesi**: RF'nin veri değişimlerine daha dirençli olması
 3. **Üretim Maliyeti**: XGBoost'un 1.73x daha büyük model boyutu
@@ -137,7 +134,7 @@ Sonuç: %99.89 vs %99.91 accuracy farkı operasyonel anlamda önemsizken, RF'nin
 | **Lojistik Regresyon** | 0.9990           | 0.9990               | 0.9990              | 0.9990   | 15 sn         |
 | **XGBoost**        | 1.0000              | 1.0000               | 1.0000              | 1.0000   | 32 sn         |
 
-**Performans Notları**:
+**Performans Notları:**
 - Tüm modellerde %99.9+ doğruluk elde edilmiştir
 - Random Forest, doğruluk ve yorumlanabilirlik dengesiyle ana model seçilmiştir
 - Lojistik regresyon en hızlı model olmasına rağmen %0.1'lik küçük performans farkı
@@ -155,8 +152,7 @@ jupyter notebook attack_detection.ipynb
 
 ## Gerçek Dünya Uygulamaları ve Çözümler
 ##
-**Finans Sektöründe Dolandırıcılık Önleme
-**
+**Finans Sektöründe Dolandırıcılık Önleme**
 Problem: Bankacılık sistemlerinde anormal para transferlerinin tespiti
 Çözümümüz:
 
@@ -171,8 +167,8 @@ def dolandiricilik_tespit(islem):
     return model.predict_proba([ozellikler])[0][1] > 0.95
 ```
 
-**Sağlık Veri Güvenliği
-**Problem: Hasta kayıtlarına yetkisiz erişim
+**Sağlık Veri Güvenliği**
+Problem: Hasta kayıtlarına yetkisiz erişim
 Uygulamamız:
 
 - EHR erişim deseni analizi
@@ -181,14 +177,13 @@ Uygulamamız:
 
 H- aftalık güvenlik raporları
 
-**Performans Metrikleri:
-**
+**Performans Metrikleri:**
 - %98.7 doğru pozitif oranı
 
 - Günde sadece 3.2 yanlış alarm (sektör ort. 8.1)
 
-**Akıllı Şehir Güvenliği
-**
+**Akıllı Şehir Güvenliği**
+
 IoT Saldırı Önleme Sistemi:
 ```mermaid
 graph TD
