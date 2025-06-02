@@ -140,7 +140,7 @@ Sonuç: %99.89 vs %99.91 accuracy farkı operasyonel anlamda önemsizken, RF'nin
 - Lojistik regresyon en hızlı model olmasına rağmen %0.1'lik küçük performans farkı
 - XGBoost en yüksek doğruluğa sahip ancak daha karmaşık yapıda
   
-## 🚀 Kurulum ve Çalıştırma##
+## 🚀 Kurulum ve Çalıştırma
 Gereksinimleri yükleyin:
 
 bash
@@ -175,7 +175,7 @@ Uygulamamız:
 
 - IP davranış profilleme
 
-H- aftalık güvenlik raporları
+- Haftalık güvenlik raporları
 
 **Performans Metrikleri:**
 - %98.7 doğru pozitif oranı
