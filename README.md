@@ -2,7 +2,7 @@
 
 Veri Tabanlı Siber Saldırı Tespiti: Makine Öğrenmesi ile Saldırı Sınıflandırma Modeli
 
-📝 Proje Hakkında
+## 📝 Proje Hakkında ##
 
 Bu proje, NF-UNSW-NB15-v2 veri seti kullanılarak ağ trafiğindeki saldırıların tespiti amacıyla denetimli makine öğrenmesi algoritmalarıyla geliştirilmiştir. Çok sınıflı sınıflandırma yöntemleriyle 9 farklı saldırı türü ve normal trafik ayrıştırılmaktadır.
 
@@ -71,42 +71,41 @@ Shellcode           0.54%
 Worms               0.36%
 ```
 
-🛠️ Kullanılan Teknolojiler
-Makine Öğrenmesi Algoritmaları
+## 🛠️ Kullanılan Teknolojiler ##
+**Makine Öğrenmesi Algoritmaları
+:**
+- Random Forest (Ana model)
 
-Random Forest (Ana model)
+- Decision Tree
 
-Decision Tree
+- XGBoost
 
-XGBoost
+- Lojistik Regresyon
 
-Lojistik Regresyon
+- KNN
 
-KNN
+** Ön İşleme Teknikleri
+:**
+- Label Encoding
 
-Ön İşleme Teknikleri
+- StandardScaler
 
-Label Encoding
+- SMOTE (Dengesiz veri için)
 
-StandardScaler
+- PCA (Boyut indirgeme)
 
-SMOTE (Dengesiz veri için)
+** Değerlendirme Metrikleri
+:**
+- Accuracy
 
-PCA (Boyut indirgeme)
+- Precision/Recall
 
-Değerlendirme Metrikleri
+- F1 Score (Weighted/Macro)
 
-Accuracy
+- Confusion Matrix
 
-Precision/Recall
+- ROC-AUC (Çok sınıflı)
 
-F1 Score (Weighted/Macro)
-
-Confusion Matrix
-
-ROC-AUC (Çok sınıflı)
-
-🔍 Neden XGBoost Yerine Random Forest?
 ## 🔍 Neden XGBoost Yerine Random Forest?
 
 Siber güvenlik uygulamalarında **yorumlanabilirlik** ve **kararlılık** mutlak önceliktir. XGBoost'un minimal doğruluk avantajına (%0.02) rağmen Random Forest seçimimizin teknik gerekçeleri:
@@ -130,33 +129,33 @@ Sonuç: %99.89 vs %99.91 accuracy farkı operasyonel anlamda önemsizken, RF'nin
 
 
 
-📈 Sonuçlar
+## 📈 Sonuçlar
 
-Karar Ağacı Performansı:
-Doğruluk: 1.0000
+** Karar Ağacı Performansı:
+**Doğruluk: 1.0000
 Kesinlik: 1.0000
 Duyarlılık: 1.0000
 F1 Skoru: 1.0000
-----------------------------------------
-Random Forest Performansı:
-Doğruluk: 1.0000
+***
+** Random Forest Performansı:
+**Doğruluk: 1.0000
 Kesinlik: 1.0000
 Duyarlılık: 1.0000
 F1 Skoru: 1.0000
-----------------------------------------
-Lojistik Regresyon Performansı:
-Doğruluk: 0.9990
+***
+** Lojistik Regresyon Performansı:
+**Doğruluk: 0.9990
 Kesinlik: 0.9990
 Duyarlılık: 0.9990
 F1 Skoru: 0.9990
-----------------------------------------
-XGBoost Performansı:
-Doğruluk: 1.0000
+***
+** XGBoost Performansı:
+**Doğruluk: 1.0000
 Kesinlik: 1.0000
 Duyarlılık: 1.0000
 F1 Skoru: 1.0000
-----------------------------------------
-🚀 Kurulum ve Çalıştırma
+
+## 🚀 Kurulum ve Çalıştırma##
 Gereksinimleri yükleyin:
 
 bash
@@ -165,17 +164,19 @@ Jupyter Notebook'u çalıştırın:
 
 bash
 jupyter notebook attack_detection.ipynb
-Gerçek Dünya Uygulamaları ve Çözümler
+
+## Gerçek Dünya Uygulamaları ve Çözümler
+##
 **Finans Sektöründe Dolandırıcılık Önleme
 **
 Problem: Bankacılık sistemlerinde anormal para transferlerinin tespiti
 Çözümümüz:
 
-Gerçek zamanlı işlem izleme
+- Gerçek zamanlı işlem izleme
 
-Anomali skorlama (%99.3 doğruluk)
+- Anomali skorlama (%99.3 doğruluk)
 
-Şüpheli işlemler için otomatik uyarı
+- Şüpheli işlemler için otomatik uyarı
 ```python
 def dolandiricilik_tespit(islem):
     ozellikler = ag_ozellikleri_cikar(islem)
@@ -186,17 +187,17 @@ def dolandiricilik_tespit(islem):
 **Problem: Hasta kayıtlarına yetkisiz erişim
 Uygulamamız:
 
-EHR erişim deseni analizi
+- EHR erişim deseni analizi
 
-IP davranış profilleme
+- IP davranış profilleme
 
-Haftalık güvenlik raporları
+H- aftalık güvenlik raporları
 
-Performans Metrikleri:
+** Performans Metrikleri:
+**
+- %98.7 doğru pozitif oranı
 
-%98.7 doğru pozitif oranı
-
-Günde sadece 3.2 yanlış alarm (sektör ort. 8.1)
+- Günde sadece 3.2 yanlış alarm (sektör ort. 8.1)
 
 **Akıllı Şehir Güvenliği
 **
