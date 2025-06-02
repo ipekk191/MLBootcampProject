@@ -84,7 +84,7 @@ Worms               0.36%
 
 - KNN
 
-** Ön İşleme Teknikleri
+**Ön İşleme Teknikleri
 :**
 - Label Encoding
 
@@ -94,7 +94,7 @@ Worms               0.36%
 
 - PCA (Boyut indirgeme)
 
-** Değerlendirme Metrikleri
+**Değerlendirme Metrikleri
 :**
 - Accuracy
 
@@ -130,31 +130,19 @@ Sonuç: %99.89 vs %99.91 accuracy farkı operasyonel anlamda önemsizken, RF'nin
 
 
 ## 📈 Sonuçlar
+| Model               | Doğruluk (Accuracy) | Kesinlik (Precision) | Duyarlılık (Recall) | F1 Skoru | Eğitim Süresi |
+|---------------------|---------------------|----------------------|---------------------|----------|---------------|
+| **Karar Ağacı**     | 1.0000              | 1.0000               | 1.0000              | 1.0000   | 8 sn          |
+| **Random Forest**   | 1.0000              | 1.0000               | 1.0000              | 1.0000   | 45 sn         |
+| **Lojistik Regresyon** | 0.9990           | 0.9990               | 0.9990              | 0.9990   | 15 sn         |
+| **XGBoost**        | 1.0000              | 1.0000               | 1.0000              | 1.0000   | 32 sn         |
 
-** Karar Ağacı Performansı:
-**Doğruluk: 1.0000
-Kesinlik: 1.0000
-Duyarlılık: 1.0000
-F1 Skoru: 1.0000
-***
-** Random Forest Performansı:
-**Doğruluk: 1.0000
-Kesinlik: 1.0000
-Duyarlılık: 1.0000
-F1 Skoru: 1.0000
-***
-** Lojistik Regresyon Performansı:
-**Doğruluk: 0.9990
-Kesinlik: 0.9990
-Duyarlılık: 0.9990
-F1 Skoru: 0.9990
-***
-** XGBoost Performansı:
-**Doğruluk: 1.0000
-Kesinlik: 1.0000
-Duyarlılık: 1.0000
-F1 Skoru: 1.0000
-
+**Performans Notları**:
+- Tüm modellerde %99.9+ doğruluk elde edilmiştir
+- Random Forest, doğruluk ve yorumlanabilirlik dengesiyle ana model seçilmiştir
+- Lojistik regresyon en hızlı model olmasına rağmen %0.1'lik küçük performans farkı
+- XGBoost en yüksek doğruluğa sahip ancak daha karmaşık yapıda
+  
 ## 🚀 Kurulum ve Çalıştırma##
 Gereksinimleri yükleyin:
 
@@ -183,7 +171,7 @@ def dolandiricilik_tespit(islem):
     return model.predict_proba([ozellikler])[0][1] > 0.95
 ```
 
-** Sağlık Veri Güvenliği
+**Sağlık Veri Güvenliği
 **Problem: Hasta kayıtlarına yetkisiz erişim
 Uygulamamız:
 
@@ -193,7 +181,7 @@ Uygulamamız:
 
 H- aftalık güvenlik raporları
 
-** Performans Metrikleri:
+**Performans Metrikleri:
 **
 - %98.7 doğru pozitif oranı
 
