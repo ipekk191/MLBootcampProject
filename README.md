@@ -2,7 +2,7 @@
 
 Veri Tabanlı Siber Saldırı Tespiti: Makine Öğrenmesi ile Saldırı Sınıflandırma Modeli
 
-## 📝 Proje Hakkında ##
+## 📝 Proje Hakkında 
 
 Bu proje, NF-UNSW-NB15-v2 veri seti kullanılarak ağ trafiğindeki saldırıların tespiti amacıyla denetimli makine öğrenmesi algoritmalarıyla geliştirilmiştir. Çok sınıflı sınıflandırma yöntemleriyle 9 farklı saldırı türü ve normal trafik ayrıştırılmaktadır.
 
@@ -71,7 +71,7 @@ Shellcode           0.54%
 Worms               0.36%
 ```
 
-## 🛠️ Kullanılan Teknolojiler ##
+## 🛠️ Kullanılan Teknolojiler 
 **Makine Öğrenmesi Algoritmaları
 :**
 - Random Forest (Ana model)
@@ -198,6 +198,9 @@ graph TD
     D --> E[SOC Ekibini Uyar]
 ```
 Hazırlayan: Şevval İpek Topçu
+
 Eğitim: Akbank Machine Learning Bootcamp
+
 Tarih: 25 Temmuz 2025
+
 Versiyon: 1.1
