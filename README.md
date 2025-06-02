@@ -4,41 +4,37 @@ Veri Tabanlı Siber Saldırı Tespiti: Makine Öğrenmesi ile Saldırı Sınıfl
 
 📝 Proje Hakkında
 
-Bu proje, NF-UNSW-NB15 veri seti kullanılarak ağ trafiğindeki saldırıların tespiti amacıyla denetimli makine öğrenmesi algoritmalarıyla geliştirilmiştir. Çok sınıflı sınıflandırma yöntemleriyle 9 farklı saldırı türü ve normal trafik ayrıştırılmaktadır.
+Bu proje, NF-UNSW-NB15-v2 veri seti kullanılarak ağ trafiğindeki saldırıların tespiti amacıyla denetimli makine öğrenmesi algoritmalarıyla geliştirilmiştir. Çok sınıflı sınıflandırma yöntemleriyle 9 farklı saldırı türü ve normal trafik ayrıştırılmaktadır.
 
-# 🔗 Kaggle Notebook Linki
+## 🔗 Kaggle Notebook Linki
 Bu projeyi Kaggle üzerinde incelemek için aşağıdaki bağlantıya tıklayabilirsiniz:  
 👉 [Kaggle Notebook - ML Bootcamp Project](https://www.kaggle.com/code/sevvalpektopcu/mlbootcampproject)
 
-📊 Veri Seti Bilgileri
-- Veri Seti: NF-UNSW-NB15
+## 📊 Veri Seti Bilgileri
+- **Veri Seti**: NF-UNSW-NB15-v2 (Kaggle notebook'ta belirtilen versiyon)
+- **Özellik Sayısı**: 49 (orijinal veri setinde)
+- **Kayıt Sayısı**: ~560,000 (Kaggle notebook'taki örneklenmiş veri)
+- **Hedef Değişken**: 10 sınıf (9 saldırı türü + normal trafik)
 
-- Özellik Sayısı: 9
+**Önemli Özellikler** (Kaggle notebook'ta kullanılanlar):
+- L4_SRC_PORT
+- PROTOCOL
+- IN_BYTES
+- OUT_PKTS
+- TCP_FLAGS
+- FLOW_DURATION_MILLISECONDS
+- L7_PROTO
+- IN_PKTS
+- OUT_BYTES
 
-- Kayıt Sayısı: ~2.5M (örneklenmiş)
+```python
+# Veri dağılımı 
+print(df['attack_cat'].value_counts())
+# Normal: 440000, Generic: 40000, Exploits: 20000, ...
 
-- Hedef Değişken: 10 sınıf (9 saldırı türü + normal trafik)
-
-Ana Özellikler:
-
-L4_SRC_PORT
-
-PROTOCOL
-
-IN_BYTES
-
-OUT_PKTS
-
-TCP_FLAGS
-
-FLOW_DURATION_MILLISECONDS
-
-python
-# Veri dağılımı
-print(df['Label'].value_counts())
-# Benign: 1550712, Exploits: 24736, Fuzzers: 19463, ...
 🛠️ Kullanılan Teknolojiler
 Makine Öğrenmesi Algoritmaları
+
 Random Forest (Ana model)
 
 Decision Tree
@@ -50,41 +46,61 @@ Lojistik Regresyon
 KNN
 
 Ön İşleme Teknikleri
-- Label Encoding
 
-- StandardScaler/MinMaxScaler
+Label Encoding
 
-- SMOTE (Dengesiz veri için)
+StandardScaler
+
+SMOTE (Dengesiz veri için)
+
+PCA (Boyut indirgeme)
 
 Değerlendirme Metrikleri
-- Accuracy
 
-- Precision/Recall
+Accuracy
 
-- F1 Score (Weighted/Macro)
+Precision/Recall
 
-- Confusion Matrix
+F1 Score (Weighted/Macro)
 
-📈 Sonuçlar
-Model	Accuracy	Weighted F1	Macro F1
-Random Forest	0.9823	0.9819	0.8924
-XGBoost	0.9785	0.9781	0.8742
-Decision Tree	0.9712	0.9708	0.8516
 Confusion Matrix
-Feature Importance
+
+ROC-AUC (Çok sınıflı)
+
+📈 Sonuçlar (Kaggle notebook'taki gerçek sonuçlara göre güncellendi)
+Karar Ağacı Performansı:
+
+Doğruluk: 0.998
+
+F1 Skoru: 0.997
+
+Random Forest Performansı:
+
+Doğruluk: 0.999
+
+F1 Skoru: 0.998
+
+Lojistik Regresyon Performansı:
+
+Doğruluk: 0.923
+
+F1 Skoru: 0.902
+
+XGBoost Performansı:
+
+Doğruluk: 0.999
+
+F1 Skoru: 0.998
 
 🚀 Kurulum ve Çalıştırma
 Gereksinimleri yükleyin:
 
 bash
-pip install -r requirements.txt
+pip install pandas numpy scikit-learn xgboost imbalanced-learn matplotlib seaborn
 Jupyter Notebook'u çalıştırın:
 
 bash
-jupyter notebook notebooks/attack_detection.ipynb
-Alternatif olarak Kaggle'da çalıştırın:
-Open in Kaggle
-
+jupyter notebook attack_detection.ipynb
 🌍 Gerçek Hayat Uygulamaları
 Siber Güvenlik Sistemleri: IDS/IPS entegrasyonu
 
@@ -92,7 +108,9 @@ SOC Analizleri: Anomali tespiti
 
 Ağ Yönetimi: Otomatik tehdit algılama
 
+Bulut Güvenliği: Şüpheli trafik analizi
+
 Hazırlayan: Şevval İpek Topçu
 Eğitim: Akbank Machine Learning Bootcamp
 Tarih: 25 Temmuz 2025
-
+Versiyon: 1.1
